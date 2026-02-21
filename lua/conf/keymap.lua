@@ -78,3 +78,5 @@ keymap("n", "q", ":q<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>td", function()
   vim.diagnostic.enable(not vim.diagnostic.is_enabled())
 end, { silent = true, noremap = true })
+
+vim.keymap.set("n", "<leader>ch", ":noh<CR>", { desc = "Clear search highlights" })
