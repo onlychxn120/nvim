@@ -1,5 +1,5 @@
 return {
-  {  
+  {
     "altermo/ultimate-autopair.nvim",
     event = { "InsertEnter" },
     config = true,
@@ -9,6 +9,8 @@ return {
     version = "*",
     cmd = "ASToggle",
     event = { "InsertLeave", "TextChanged" },
-    opts = {}
+  },
+  {
+    "smjonas/inc-rename.nvim"
   }
 }
