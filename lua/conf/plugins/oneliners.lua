@@ -9,8 +9,9 @@ return {
     version = "*",
     cmd = "ASToggle",
     event = { "InsertLeave", "TextChanged" },
+    opts = {}
   },
   {
-    "smjonas/inc-rename.nvim"
+    "smjonas/inc-rename.nvim",
   }
 }
