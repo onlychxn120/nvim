@@ -72,15 +72,16 @@ keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 -- keymap("n", "<leader>tr", ":vertical botright term<CR>", { desc = "Open terminal on the right" })
 
-keymap("n", "w", ":w<CR>", { noremap = true, silent = true })
-keymap("n", "q", ":q<CR>", { noremap = true, silent = true })
+keymap("n", "<leader>w", ":w<CR>", { noremap = true, silent = true })
+keymap("n", "<leader>q", ":q<CR>", { noremap = true, silent = true })
 
 vim.keymap.set("n", "<leader>td", function()
   vim.diagnostic.enable(not vim.diagnostic.is_enabled())
 end, { silent = true, noremap = true })
 
-vim.keymap.set("n", "<leader>ch", ":noh<CR>", { desc = "Clear search highlights" })
+vim.keymap.set("n", "<leader>h", ":noh<CR>", { desc = "Clear search highlights" })
 
 vim.keymap.set("n", "<leader>rn", function()
   return ":IncRename " .. vim.fn.expand("<cword>")
 end, { expr = true })
+
