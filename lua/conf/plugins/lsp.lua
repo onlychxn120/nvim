@@ -116,9 +116,6 @@ return {
     -- find more here: https://www.nerdfonts.com/cheat-sheet
 
     cmp.setup({
-      window = {
-        documentation = cmp.config.disable
-      },
       sources = {
         {name = "nvim_lsp"},
       },
