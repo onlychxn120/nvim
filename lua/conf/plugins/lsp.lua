@@ -116,6 +116,9 @@ return {
     -- find more here: https://www.nerdfonts.com/cheat-sheet
 
     cmp.setup({
+      window = {
+        documentation = cmp.config.disable
+      },
       sources = {
         {name = "nvim_lsp"},
       },
@@ -136,7 +139,7 @@ return {
        ["<CR>"] = cmp.mapping.confirm { select = false },
        ["<Tab>"] = cmp.mapping(function(fallback)
          if cmp.visible() then
-           cmp.select_prev_item()
+           cmp.select_next_item()
          else
            fallback()
          end
@@ -170,7 +173,6 @@ return {
         })[entry.source.name]
         return require("nvim-highlight-colors").format(entry, vim_item)
       end,
-      form
     }
   })
   vim.cmd("doautocmd ColorScheme")
