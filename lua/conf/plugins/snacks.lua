@@ -6,7 +6,12 @@ return {
   opts = {
     bigfile = { enabled = true },
     explorer = { enabled = true },
-    image = { enabled = true },
+    image = { 
+      enabled = true,
+      math = {
+        enabled = false,
+      }
+    },
     indent = { enabled = true },
     notifier = {
       enabled = true,

@@ -73,8 +73,8 @@ return {
       handlers = {
         -- Default handler for automatically configuring installed servers
         function(server_name)
-          require("lspconfig")[server_name].setup({}) end,
-
+          require("lspconfig")[server_name].setup({})
+        end,
         -- You can add custom handlers for specific servers here
         -- For example:
         -- tsserver = function(_, opts)

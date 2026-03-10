@@ -19,7 +19,6 @@ return {
         return root
       end
 
-      -- Look for a project marker so imports from parent dirs stay inside root
       local main_dir = vim.fs.dirname(vim.fn.fnamemodify(path_of_main_file, ':p'))
       local found = vim.fs.find({ 'typst.toml', '.git' }, { path = main_dir, upward = true })
       if #found > 0 then
@@ -29,8 +28,6 @@ return {
       return main_dir
     end,
 
-    -- This function will be called to determine the main file of the typst
-    -- project.
     get_main_file = function(path_of_buffer)
       return path_of_buffer
     end,
