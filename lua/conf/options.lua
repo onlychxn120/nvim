@@ -31,7 +31,7 @@ local options = {
   relativenumber = true,
   numberwidth = 4,
   signcolumn = "yes",
-  wrap = true,
+  wrap = false,
   scrolloff = 4,
   sidescrolloff = 4,
   --guifont = "Cascadia_Mono:h10",
@@ -68,3 +68,5 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank { higroup = 'IncSearch', timeout = 500 }
   end,
 })
+
+vim.opt.mouse = ''
