@@ -12,7 +12,8 @@ local options = {
   mouse = "a",
   pumheight = 10,
   showmode = false,
-  showtabline = 2,
+  showtabline = 0,
+  winbar = "",
   smartcase = true,
   smartindent = true,
   splitbelow = true,
@@ -68,5 +69,3 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank { higroup = 'IncSearch', timeout = 500 }
   end,
 })
-
-vim.opt.mouse = ''

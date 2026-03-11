@@ -5,7 +5,7 @@ return {
   opts = {
     debug = false,
     open_cmd = nil,
-    port = 8000,
+    port = 0,
     host = '127.0.0.1',
     invert_colors = 'auto',
     follow_cursor = true,
