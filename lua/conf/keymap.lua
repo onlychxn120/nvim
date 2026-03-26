@@ -1,87 +1,54 @@
-local opts = { noremap = true, silent = true }
-
-local term_opts = { silent = true }
-
--- Shorten function name
-local keymap = vim.api.nvim_set_keymap
-
---Remap space as leader key
-keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
+vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 
--- Modes
---   normal_mode = "n",
---   insert_mode = "i",
---   visual_mode = "v",
---   visual_block_mode = "x",
---   term_mode = "t",
---   command_mode = "c",
+vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Go to left window" })
+vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Go to lower window" })
+vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Go to upper window" })
+vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Go to right window" })
 
--- Normal --
--- Better window navigation
-keymap("n", "<C-h>", "<C-w>h", opts)
-keymap("n", "<C-j>", "<C-w>j", opts)
-keymap("n", "<C-k>", "<C-w>k", opts)
-keymap("n", "<C-l>", "<C-w>l", opts)
+vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Scroll down and center" })
+vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Scroll up and center" })
 
-keymap("n", "<C-d>", "<C-d>zz", opts)
-keymap("n", "<C-u>", "<C-u>zz", opts)
+vim.keymap.set("n", "<C-Up>", "<cmd>resize +1<CR>", { desc = "Increase window height" })
+vim.keymap.set("n", "<C-Down>", "<cmd>resize -1<CR>", { desc = "Decrease window height" })
+vim.keymap.set("n", "<C-Left>", "<cmd>vertical resize -1<CR>", { desc = "Decrease window width" })
+vim.keymap.set("n", "<C-Right>", "<cmd>vertical resize +1<CR>", { desc = "Increase window width" })
 
---keymap("n", "<leader>e", ":Lex 30<cr>", opts)
+vim.keymap.set("n", "<S-l>", "<cmd>bnext<CR>", { desc = "Next buffer" })
+vim.keymap.set("n", "<S-h>", "<cmd>bprevious<CR>", { desc = "Previous buffer" })
 
--- Resize with arrows
-keymap("n", "<C-Up>", ":resize +1<CR>", opts)
-keymap("n", "<C-Down>", ":resize -1<CR>", opts)
-keymap("n", "<C-Left>", ":vertical resize -1<CR>", opts)
-keymap("n", "<C-Right>", ":vertical resize +1<CR>", opts)
+vim.keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode" })
 
--- Navigate buffers
-keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bprevious<CR>", opts)
+vim.keymap.set("n", "Q", "<nop>")
 
--- Insert --
--- Press jk fast to enter
-keymap("i", "jk", "<ESC>", opts)
+vim.keymap.set("v", "<A-j>", ":m .+1<CR>==", { desc = "Move text down" })
+vim.keymap.set("v", "<A-k>", ":m .-2<CR>==", { desc = "Move text up" })
 
--- Visual --
--- Stay in indent mode
--- keymap("v", "<", "<gv", opts)
--- keymap("v", ">", ">gv", opts)
+vim.keymap.set("v", "p", '"_dP', { desc = "Paste without overwriting register" })
 
-keymap("n", "Q", "<nop>", opts)
+vim.keymap.set("x", "J", ":move '>+1<CR>gv=gv", { desc = "Move block down" })
+vim.keymap.set("x", "K", ":move '<-2<CR>gv=gv", { desc = "Move block up" })
+vim.keymap.set("x", "<A-j>", ":move '>+1<CR>gv=gv", { desc = "Move block down" })
+vim.keymap.set("x", "<A-k>", ":move '<-2<CR>gv=gv", { desc = "Move block up" })
+vim.keymap.set("x", "p", '"_dP', { desc = "Paste without overwriting register" })
 
--- Move text up and down
-keymap("v", "<A-j>", ":m .+1<CR>==", opts)
-keymap("v", "<A-k>", ":m .-2<CR>==", opts)
-keymap("v", "p", '"_dP', opts)
+vim.keymap.set("t", "<C-h>", "<C-\\><C-N><C-w>h", { desc = "Go to left window" })
+vim.keymap.set("t", "<C-j>", "<C-\\><C-N><C-w>j", { desc = "Go to lower window" })
+vim.keymap.set("t", "<C-k>", "<C-\\><C-N><C-w>k", { desc = "Go to upper window" })
+vim.keymap.set("t", "<C-l>", "<C-\\><C-N><C-w>l", { desc = "Go to right window" })
 
--- Visual Block --
--- Move text up and down
-keymap("x", "J", ":move '>+1<CR>gv=gv", opts)
-keymap("x", "K", ":move '<-2<CR>gv=gv", opts)
-keymap("x", "<A-j>", ":move '>+1<CR>gv=gv", opts)
-keymap("x", "<A-k>", ":move '<-2<CR>gv=gv", opts)
-keymap("x", "p", '"_dP', opts)
-
--- Terminal --
--- Better terminal navigation
-keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
-keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
-keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
-keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
--- keymap("n", "<leader>tr", ":vertical botright term<CR>", { desc = "Open terminal on the right" })
-
-keymap("n", "<leader>w", ":w<CR>", { noremap = true, silent = true })
-keymap("n", "<leader>q", ":q<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>w", "<cmd>w<CR>", { desc = "Save file" })
+vim.keymap.set("n", "<leader>q", "<cmd>q<CR>", { desc = "Quit" })
+vim.keymap.set("n", "<leader>h", "<cmd>noh<CR>", { desc = "Clear search highlights" })
 
 vim.keymap.set("n", "<leader>td", function()
-  vim.diagnostic.enable(not vim.diagnostic.is_enabled())
-end, { silent = true, noremap = true })
-
-vim.keymap.set("n", "<leader>h", ":noh<CR>", { desc = "Clear search highlights" })
+	vim.diagnostic.enable(not vim.diagnostic.is_enabled())
+end, { desc = "Toggle diagnostics" })
 
 vim.keymap.set("n", "<leader>rn", function()
-  return ":IncRename " .. vim.fn.expand("<cword>")
-end, { expr = true })
+	return ":IncRename " .. vim.fn.expand("<cword>")
+end, { expr = true, desc = "Rename under cursor" })
 
+vim.keymap.set({ "n", "v" }, "j", "gj", { desc = "Move down visual line" })
+vim.keymap.set({ "n", "v" }, "k", "gk", { desc = "Move up visual line" })
