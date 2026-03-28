@@ -31,6 +31,9 @@ return {
 		quickfile = { enabled = true },
 		scroll = { enabled = true },
 		terminal = { enabled = true },
+		styles = {
+			wo = { wrap = true },
+		},
 	},
 	keys = {
 		-- Explorer
@@ -40,6 +43,20 @@ return {
 				Snacks.explorer()
 			end,
 			desc = "File Explorer",
+		},
+		{
+			"<leader><space>",
+			function()
+				Snacks.picker.smart()
+			end,
+			desc = "Smart Find Files",
+		},
+		{
+			"<leader>n",
+			function()
+				Snacks.picker.notifications()
+			end,
+			desc = "Notification History",
 		},
 		-- Finder
 		{
@@ -57,11 +74,11 @@ return {
 			desc = "Buffers",
 		},
 		{
-			"<leader>/",
+			"<leader>sb",
 			function()
-				Snacks.picker.grep()
+				Snacks.picker.grep_buffers()
 			end,
-			desc = "Grep",
+			desc = "Grep Open Buffers",
 		},
 		{
 			"<leader>t",
@@ -69,6 +86,20 @@ return {
 				Snacks.terminal()
 			end,
 			desc = "Toggle Terminal",
+		},
+		{
+			"<leader>bd",
+			function()
+				Snacks.bufdelete()
+			end,
+			desc = "Delete Buffer",
+		},
+		{
+			"<leader>gg",
+			function()
+				Snacks.lazygit()
+			end,
+			desc = "Open Lazygit",
 		},
 	},
 }

@@ -5,7 +5,7 @@ return {
 		event = "InsertEnter",
 		config = function()
 			require("copilot").setup({
-				copilot_node_command = "/opt/homebrew/bin/node",
+				copilot_node_command = "/Users/nanxingchen/.local/state/fnm_multishells/65442_1774654543998/bin/node",
 				panel = { enabled = false },
 				suggestion = { enabled = false },
 			})
