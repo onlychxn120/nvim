@@ -81,7 +81,7 @@ return {
 			desc = "Grep Open Buffers",
 		},
 		{
-			"<leader>t",
+			"<C-t>",
 			function()
 				Snacks.terminal()
 			end,
