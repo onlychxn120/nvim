@@ -85,6 +85,15 @@ return {
 						capabilities = capabilities,
 					})
 				end,
+				tinymist = function()
+					require("lspconfig").tinymist.setup({
+						capabilities = capabilities,
+						settings = {
+							formatterMode = "disable",
+							exportPdf = "never",
+						},
+					})
+				end,
 				clangd = function()
 					require("lspconfig").clangd.setup({
 						capabilities = capabilities,

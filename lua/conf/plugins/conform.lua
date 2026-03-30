@@ -4,6 +4,7 @@ return {
 	config = function()
 		require("conform").setup({
 			formatters_by_ft = {
+				typst = { "typstyle" },
 				c = { "clang-format" },
 				cpp = { "clang-format" },
 				go = { "goimports", "gofmt" },
