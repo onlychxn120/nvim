@@ -33,6 +33,17 @@ return {
 		terminal = { enabled = true },
 		styles = {
 			wo = { wrap = true },
+			terminal = {
+				position = "right",
+				width = 0.5,
+				border = "single",
+			},
+			lazygit = {
+				position = "float",
+				relative = "editor",
+				width = 0.9,
+				height = 0.9,
+			},
 		},
 	},
 	keys = {
