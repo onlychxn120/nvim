@@ -143,6 +143,7 @@ return {
 						capabilities = capabilities,
 						on_attach = function(client)
 							client.server_capabilities.hoverProvider = false
+							client.server_capabilities.documentFormattingProvider = false
 						end,
 						init_options = {
 							settings = {

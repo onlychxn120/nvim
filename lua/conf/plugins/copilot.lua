@@ -9,6 +9,13 @@ return {
 				panel = { enabled = false },
 				suggestion = { enabled = false },
 			})
+
+			vim.cmd("Copilot disable")
+
+			vim.keymap.set("n", "<leader>cp", function()
+				vim.cmd("Copilot enable")
+				print("Copilot enabled")
+			end, { desc = "Enable Copilot" })
 		end,
 	},
 	{

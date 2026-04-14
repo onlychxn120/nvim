@@ -17,17 +17,7 @@ return {
 			enabled = true,
 			timeout = 3000,
 		},
-		picker = {
-			enabled = true,
-			win = {
-				list = {
-					wo = {
-						number = true,
-						relativenumber = true,
-					},
-				},
-			},
-		},
+		picker = { enabled = true },
 		quickfile = { enabled = true },
 		scroll = { enabled = true },
 		terminal = { enabled = true },

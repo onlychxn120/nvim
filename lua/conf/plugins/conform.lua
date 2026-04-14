@@ -9,7 +9,7 @@ return {
 				cpp = { "clang-format" },
 				go = { "goimports", "gofmt" },
 				lua = { "stylua" },
-				python = { "ruff_fix", "ruff_format" },
+				python = { "ruff_format", "ruff_fix" },
 				javascript = { "prettierd" },
 				typescript = { "prettierd" },
 				javascriptreact = { "prettierd" },
@@ -23,7 +23,17 @@ return {
 			},
 			formatters = {
 				ruff_fix = {
-					prepend_args = { "--unfixable=F401,F841" },
+					args = {
+						"check",
+						"--fix",
+						"--force-exclude",
+						"--exit-zero",
+						"--no-cache",
+						"--unfixable=F401,F841", -- Your custom rule safely tucked in here!
+						"--stdin-filename",
+						"$FILENAME",
+						"-",
+					},
 				},
 			},
 			format_on_save = {
