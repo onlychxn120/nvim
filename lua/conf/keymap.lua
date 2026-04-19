@@ -29,6 +29,12 @@ end, { expr = true, desc = "Rename under cursor" })
 map({ "n", "v" }, "j", "gj", { desc = "Move down visual line" })
 map({ "n", "v" }, "k", "gk", { desc = "Move up visual line" })
 map("n", "Q", "<nop>")
+map("n", "<leader>tc", function()
+	local file = vim.fn.expand("%")
+	vim.cmd("silent !markdown-toc -i " .. file)
+	vim.cmd("edit!")
+	print("Table of Contents updated")
+end, { desc = "Generate/Update Markdown TOC" })
 
 -- Insert --
 map("i", "<C-l>", "<Right>", { desc = "Jump out of pair" })

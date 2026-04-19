@@ -85,6 +85,23 @@ return {
 						capabilities = capabilities,
 					})
 				end,
+				harper_ls = function()
+					require("lspconfig").harper_ls.setup({
+						capabilities = capabilities,
+						settings = {
+							["harper_ls"] = {
+								userDictPath = vim.fn.stdpath("config") .. "/spell/en.utf-8.add",
+								linters = {
+									spell_check = true,
+									sentence_capitalization = true,
+									repeated_words = true,
+									long_sentences = true,
+									spelled_numbers = false,
+								},
+							},
+						},
+					})
+				end,
 				tinymist = function()
 					require("lspconfig").tinymist.setup({
 						capabilities = capabilities,
