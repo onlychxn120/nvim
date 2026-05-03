@@ -21,6 +21,7 @@ return {
 		quickfile = { enabled = true },
 		scroll = { enabled = true },
 		terminal = { enabled = true },
+		zen = { enabled = true },
 		styles = {
 			wo = { wrap = true },
 			terminal = {
@@ -101,6 +102,13 @@ return {
 				Snacks.lazygit()
 			end,
 			desc = "Open Lazygit",
+		},
+		{
+			"<leader>z",
+			function()
+				Snacks.zen()
+			end,
+			desc = "Toggle Zen Mode",
 		},
 	},
 }
