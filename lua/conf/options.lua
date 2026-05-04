@@ -10,7 +10,7 @@ local options = {
 	showtabline = 0, -- Always show tabs
 	winbar = "", -- Disable winbar
 	signcolumn = "yes", -- Always show the sign column (prevents text shifting)
-	cursorline = false, -- Highlight the current line
+	cursorline = true, -- Highlight the current line
 	wrap = false, -- Display long lines as just one line
 
 	-- 🔢 Numbers & Scrolling
