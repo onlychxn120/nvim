@@ -1,7 +1,7 @@
 local options = {
 	-- 🎨 UI & Display
 	termguicolors = true, -- Enable 24-bit RGB colors
-	guifont = "JetBrainsMono_Nerd_Font:h11",
+	guifont = "Terminess Nerd Font:h12",
 	cmdheight = 2, -- Space for command line
 	conceallevel = 0, -- Show `` in markdown files
 	pumheight = 10, -- Popup menu height

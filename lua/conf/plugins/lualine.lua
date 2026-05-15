@@ -1,11 +1,11 @@
 return {
 	"nvim-lualine/lualine.nvim",
-	dependencies = { "nvim-tree/nvim-web-devicons", "AndreM222/copilot-lualine" },
+	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
 		require("lualine").setup({
 			options = {
 				icons_enabled = true,
-				theme = "tokyonight",
+				theme = "auto",
 				component_separators = { left = "", right = "" },
 				section_separators = { left = "", right = "" },
 				disabled_filetypes = {
@@ -40,7 +40,6 @@ return {
 				lualine_b = { "branch", "diff", "diagnostics" },
 				lualine_c = { "filename" },
 				lualine_x = {
-					"copilot",
 					"encoding",
 					"fileformat",
 					"filetype",
