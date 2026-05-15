@@ -5,12 +5,6 @@ return {
 		priority = 1200,
 		opts = {
 			style = "night",
-			styles = {
-				comments = { italic = false },
-				keywords = { italic = false },
-				functions = {},
-				variables = {},
-			},
 		},
 		config = function(_, opts)
 			require("tokyonight").setup(opts)
