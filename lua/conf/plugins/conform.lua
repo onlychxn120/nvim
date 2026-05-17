@@ -29,10 +29,15 @@ return {
 						"--force-exclude",
 						"--exit-zero",
 						"--no-cache",
-						"--unfixable=F401,F841", -- Your custom rule safely tucked in here!
+						"--unfixable=F401,F841",
 						"--stdin-filename",
 						"$FILENAME",
 						"-",
+					},
+				},
+				["clang-format"] = {
+					prepend_args = {
+						"-style={BasedOnStyle: LLVM, IndentWidth: 4, TabWidth: 4}",
 					},
 				},
 			},

@@ -69,14 +69,14 @@ return {
 			desc = "Find Files",
 		},
 		{
-			"<leader>fb",
+			"<leader>bf",
 			function()
 				Snacks.picker.buffers()
 			end,
 			desc = "Buffers",
 		},
 		{
-			"<leader>sb",
+			"<leader>bg",
 			function()
 				Snacks.picker.grep_buffers()
 			end,
