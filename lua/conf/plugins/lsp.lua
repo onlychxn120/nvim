@@ -85,11 +85,35 @@ return {
 						capabilities = capabilities,
 					})
 				end,
+				rust_analyzer = function()
+					require("lspconfig").rust_analyzer.setup({
+						capabilities = capabilities,
+						settings = {
+							["rust-analyzer"] = {
+								cargo = {
+									allFeatures = true,
+									loadOutDirsFromCheck = true,
+									buildScripts = {
+										enable = true,
+									},
+								},
+								checkOnSave = {
+									allFeatures = true,
+									command = "clippy",
+									extraArgs = { "--no-deps" },
+								},
+								procMacro = {
+									enable = true,
+								},
+							},
+						},
+					})
+				end,
 				harper_ls = function()
 					require("lspconfig").harper_ls.setup({
 						capabilities = capabilities,
 						settings = {
-							["harper_ls"] = {
+							["harper-ls"] = {
 								userDictPath = vim.fn.stdpath("config") .. "/spell/en.utf-8.add",
 								linters = {
 									spell_check = true,
