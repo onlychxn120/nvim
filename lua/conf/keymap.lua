@@ -38,7 +38,7 @@ end, { desc = "Generate/Update Markdown TOC" })
 
 -- Insert --
 map("i", "<C-l>", "<Right>", { desc = "Jump out of pair" })
-map("i", "jj", "<ESC>", { desc = "Exit insert mode" })
+map("i", "jk", "<ESC>", { desc = "Exit insert mode" })
 
 -- Visual --
 map("v", "<A-j>", ":m .+1<CR>==", { desc = "Move text down" })
